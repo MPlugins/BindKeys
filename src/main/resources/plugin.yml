@@ -1,0 +1,6 @@
+name: BindKeys
+version: '${project.version}'
+main: net.mplugins.bindkeys.BindKeys
+api-version: 1.18
+authors: [ MPlugins ]
+website: https://mplugins.net
