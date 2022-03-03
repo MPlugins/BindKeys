@@ -1,5 +1,7 @@
 package net.mplugins.bindkeys;
 
+import net.mplugins.bindkeys.keybindings.FKeybinding;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
@@ -7,10 +9,20 @@ import java.util.List;
 
 public final class BindKeys extends JavaPlugin
 {
+    private static BindKeys instance;
+
     @Override
     public void onEnable()
     {
+        instance = this;
         this.setUpConfigurationFile();
+        this.registerKeybindings();
+    }
+
+    private void registerKeybindings()
+    {
+        PluginManager pluginManager = getServer().getPluginManager();
+        pluginManager.registerEvents(new FKeybinding(), this);
     }
 
     private void setUpConfigurationFile()
@@ -36,5 +48,10 @@ public final class BindKeys extends JavaPlugin
         header.add("Version: " + version);
 
         return header;
+    }
+
+    public static BindKeys getInstance()
+    {
+        return instance;
     }
 }

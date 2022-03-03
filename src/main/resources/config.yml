@@ -1,3 +1,8 @@
-
-keybinds:
-  f: "/gamemode 1"
+keybindings:
+  f:
+    permission:
+    enabled: true
+    cooldown: 10
+    commands:
+      - say [f] first command
+      - say [f] second command
