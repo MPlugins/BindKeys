@@ -4,6 +4,7 @@
 *.iml
 *.ipr
 *.iws
+*.txt
 
 # IntelliJ
 out/
