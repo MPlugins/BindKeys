@@ -2,6 +2,7 @@ package net.mplugins.bindkeys;
 
 import net.mplugins.bindkeys.keybindings.FKeybinding;
 import net.mplugins.bindkeys.keybindings.QKeybinding;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -18,6 +19,12 @@ public final class BindKeys extends JavaPlugin
         instance = this;
         this.setUpConfigurationFile();
         this.registerKeybindings();
+        this.initialiseMetrics();
+    }
+
+    private void initialiseMetrics()
+    {
+        Metrics metrics = new Metrics(this, 14520);
     }
 
     private void registerKeybindings()
