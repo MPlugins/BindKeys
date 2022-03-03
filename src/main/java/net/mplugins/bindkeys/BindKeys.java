@@ -19,7 +19,7 @@ public final class BindKeys extends JavaPlugin
         this.setUpConfigurationFile();
         this.registerKeybindings();
     }
-    
+
     private void registerKeybindings()
     {
         PluginManager pluginManager = getServer().getPluginManager();
@@ -51,8 +51,8 @@ public final class BindKeys extends JavaPlugin
         header.add(null);
         header.add(null);
         header.add(null);
-        header.add("Note that any keybinding involving Q only work when the player has an item in their hand. There ");
-        header.add("is unfortunately no way around this!");
+        header.add("Note that any keybinding involving Q only works if the player holds an item in their hand. There");
+        header.add("unfortunately is no way around this!");
 
         return header;
     }
