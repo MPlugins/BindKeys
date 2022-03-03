@@ -17,7 +17,7 @@ keybindings:
     permission: permission
     # Whether this keybinding should be enabled (true|false)
     enabled: true
-    cancel-event: false
+    cancel-event: true
     cooldown: 10
     commands:
       - say [q] first command
