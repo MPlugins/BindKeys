@@ -18,14 +18,8 @@ public final class BindKeys extends JavaPlugin
         instance = this;
         this.setUpConfigurationFile();
         this.registerKeybindings();
-        this.initialiseMetrics();
     }
-
-    private void initialiseMetrics()
-    {
-        Metrics metrics = new Metrics(this, 14520);
-    }
-
+    
     private void registerKeybindings()
     {
         PluginManager pluginManager = getServer().getPluginManager();
@@ -54,6 +48,11 @@ public final class BindKeys extends JavaPlugin
         header.add("Discord: https://discord.gg/DgHD48E75s");
         header.add(null);
         header.add("Version: " + version);
+        header.add(null);
+        header.add(null);
+        header.add(null);
+        header.add("Note that any keybinding involving Q only work when the player has an item in their hand. There ");
+        header.add("is unfortunately no way around this!");
 
         return header;
     }

@@ -1,6 +1,9 @@
 keybindings:
+  # When F is pressed
   f:
+    # Permission needed to use this keybinding. Leave empty for no permission.
     permission: permission
+    # Whether this keybinding should be enabled (true|false)
     enabled: true
     cancel-event: true
     cooldown: 10
@@ -8,8 +11,11 @@ keybindings:
       - say [f] first command
       - say [f] second command
 
+  # When Q is pressed
   q:
+    # Permission needed to use this keybinding. Leave empty for no permission.
     permission: permission
+    # Whether this keybinding should be enabled (true|false)
     enabled: true
     cancel-event: false
     cooldown: 10
@@ -17,8 +23,11 @@ keybindings:
       - say [q] first command
       - say [q] second command
 
+  # When SHIFT + F is pressed
   shift-f:
+    # Permission needed to use this keybinding. Leave empty for no permission.
     permission: permission
+    # Whether this keybinding should be enabled (true|false)
     enabled: true
     cancel-event: true
     cooldown: 10
@@ -26,8 +35,11 @@ keybindings:
       - say [shift-f] first command
       - say [shift-f] second command
 
+  # When SHIFT + Q is pressed
   shift-q:
+    # Permission needed to use this keybinding. Leave empty for no permission.
     permission: permission
+    # Whether this keybinding should be enabled (true|false)
     enabled: true
     cancel-event: true
     cooldown: 10
