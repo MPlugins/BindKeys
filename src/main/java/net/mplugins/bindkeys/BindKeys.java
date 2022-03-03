@@ -29,7 +29,9 @@ public final class BindKeys extends JavaPlugin
         header.add("## Plugin by MPlugins.net ##");
         header.add("## ====================== ##");
         header.add(null);
-        header.add("URL: https://github.com/MPlugins/BindKeys");
+        header.add("GitHub: https://github.com/MPlugins/BindKeys");
+        header.add(null);
+        header.add("Discord: https://discord.gg/DgHD48E75s");
         header.add(null);
         header.add("Version: " + version);
 
