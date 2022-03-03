@@ -28,6 +28,13 @@ public interface Keybinding extends Listener
     boolean hasCooldown(UUID uuid);
 
     /**
+     * Checks if the event should be canceled.
+     *
+     * @return true, if event should be canceled, false otherwise.
+     */
+    boolean isEventCanceled();
+
+    /**
      * Get the permission needed to use this keybinding.
      *
      * @return the permission

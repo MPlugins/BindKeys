@@ -18,6 +18,7 @@ public class FKeybinding implements Keybinding
     private static final Set<UUID> cooldowns = new HashSet<>();
 
     private final boolean enabled;
+    private final boolean cancelEvent;
     private final String permission;
     private final int cooldown;
     private final List<String> commands;
@@ -25,6 +26,7 @@ public class FKeybinding implements Keybinding
     public FKeybinding()
     {
         this.enabled = config.getBoolean(PATH + ".enabled");
+        this.cancelEvent = config.getBoolean(PATH + ".cancel-event");
         this.permission = config.isSet(PATH + ".permission") ? config.getString(PATH + ".permission") : "";
         this.cooldown = config.getInt(PATH + ".cooldown");
         this.commands = config.getStringList(PATH + ".commands");
@@ -40,6 +42,12 @@ public class FKeybinding implements Keybinding
     public boolean hasCooldown(UUID uuid)
     {
         return cooldowns.contains(uuid);
+    }
+
+    @Override
+    public boolean isEventCanceled()
+    {
+        return cancelEvent;
     }
 
     @Override
@@ -68,7 +76,7 @@ public class FKeybinding implements Keybinding
         if (!this.isEnabled() || !player.hasPermission(this.getPermission()) || hasCooldown(player.getUniqueId()))
             return;
 
-        event.setCancelled(true);
+        event.setCancelled(this.isEventCanceled());
 
         for (String command : this.getCommands())
             Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replaceFirst("/", ""));
@@ -82,6 +90,6 @@ public class FKeybinding implements Keybinding
             {
                 cooldowns.remove(player.getUniqueId());
             }
-        }.runTaskLaterAsynchronously(plugin, 20 * this.getCooldown());
+        }.runTaskLaterAsynchronously(plugin, 20L * this.getCooldown());
     }
 }

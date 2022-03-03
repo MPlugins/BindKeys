@@ -1,8 +1,36 @@
 keybindings:
   f:
-    permission:
+    permission: permission
     enabled: true
+    cancel-event: true
     cooldown: 10
     commands:
       - say [f] first command
       - say [f] second command
+
+  q:
+    permission: permission
+    enabled: true
+    cancel-event: false
+    cooldown: 10
+    commands:
+      - say [q] first command
+      - say [q] second command
+
+  shift-f:
+    permission: permission
+    enabled: true
+    cancel-event: true
+    cooldown: 10
+    commands:
+      - say [shift-f] first command
+      - say [shift-f] second command
+
+  shift-q:
+    permission: permission
+    enabled: true
+    cancel-event: true
+    cooldown: 10
+    commands:
+      - say [shift-q] first command
+      - say [shift-q] second command
