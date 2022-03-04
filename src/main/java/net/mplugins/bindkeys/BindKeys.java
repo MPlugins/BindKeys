@@ -2,6 +2,8 @@ package net.mplugins.bindkeys;
 
 import net.mplugins.bindkeys.keybindings.FKeybinding;
 import net.mplugins.bindkeys.keybindings.QKeybinding;
+import net.mplugins.bindkeys.keybindings.ShiftFKeybinding;
+import net.mplugins.bindkeys.keybindings.ShiftQKeybinding;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -24,7 +26,9 @@ public final class BindKeys extends JavaPlugin
     {
         PluginManager pluginManager = getServer().getPluginManager();
         pluginManager.registerEvents(new FKeybinding(), this);
+        pluginManager.registerEvents(new ShiftFKeybinding(), this);
         pluginManager.registerEvents(new QKeybinding(), this);
+        pluginManager.registerEvents(new ShiftQKeybinding(), this);
     }
 
     private void setUpConfigurationFile()

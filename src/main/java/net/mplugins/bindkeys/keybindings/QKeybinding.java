@@ -74,13 +74,13 @@ public class QKeybinding implements Keybinding
     {
         Player player = event.getPlayer();
 
-        if (!this.isEnabled() || !player.hasPermission(this.getPermission()) || hasCooldown(player.getUniqueId()))
+        if (!this.isEnabled() || !player.hasPermission(this.getPermission()) || hasCooldown(player.getUniqueId()) || player.isSneaking())
             return;
 
         event.setCancelled(this.isEventCanceled());
 
         for (String command : this.getCommands())
-            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replaceFirst("/", ""));
+            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
 
         cooldowns.add(player.getUniqueId());
 

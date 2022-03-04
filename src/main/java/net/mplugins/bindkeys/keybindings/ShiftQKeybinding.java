@@ -3,6 +3,7 @@ package net.mplugins.bindkeys.keybindings;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerSwapHandItemsEvent;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -11,9 +12,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
-public class FKeybinding implements Keybinding
+public class ShiftQKeybinding implements Keybinding
 {
-    private static final String NAME = "f";
+    private static final String NAME = "shift-q";
     private static final String PATH = "keybindings." + NAME;
     private static final Set<UUID> cooldowns = new HashSet<>();
 
@@ -23,7 +24,7 @@ public class FKeybinding implements Keybinding
     private final int cooldown;
     private final List<String> commands;
 
-    public FKeybinding()
+    public ShiftQKeybinding()
     {
         this.enabled = config.getBoolean(PATH + ".enabled");
         this.cancelEvent = config.getBoolean(PATH + ".cancel-event");
@@ -69,11 +70,11 @@ public class FKeybinding implements Keybinding
     }
 
     @EventHandler
-    public void onSwitchHand(PlayerSwapHandItemsEvent event)
+    public void onDropItem(PlayerDropItemEvent event)
     {
         Player player = event.getPlayer();
 
-        if (!this.isEnabled() || !player.hasPermission(this.getPermission()) || hasCooldown(player.getUniqueId()) || player.isSneaking())
+        if (!this.isEnabled() || !player.hasPermission(this.getPermission()) || hasCooldown(player.getUniqueId()) || !player.isSneaking())
             return;
 
         event.setCancelled(this.isEventCanceled());
