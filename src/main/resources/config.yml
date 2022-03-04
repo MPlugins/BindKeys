@@ -5,8 +5,11 @@ keybindings:
     permission: permission
     # Whether this keybinding should be enabled (true|false)
     enabled: true
+    # Whether the corresponding event should be canceled.
     cancel-event: true
+    # Cooldown in seconds, until this keybinding can be used again.
     cooldown: 10
+    # Commands (without / ) to be executed.
     commands:
       - say [f] first command
       - say [f] second command
@@ -17,8 +20,11 @@ keybindings:
     permission: permission
     # Whether this keybinding should be enabled (true|false)
     enabled: true
+    # Whether the corresponding event should be canceled.
     cancel-event: true
+    # Cooldown in seconds, until this keybinding can be used again.
     cooldown: 10
+    # Commands (without / ) to be executed.
     commands:
       - say [q] first command
       - say [q] second command
@@ -29,8 +35,11 @@ keybindings:
     permission: permission
     # Whether this keybinding should be enabled (true|false)
     enabled: true
+    # Whether the corresponding event should be canceled.
     cancel-event: true
+    # Cooldown in seconds, until this keybinding can be used again.
     cooldown: 10
+    # Commands (without / ) to be executed.
     commands:
       - say [shift-f] first command
       - say [shift-f] second command
@@ -41,8 +50,11 @@ keybindings:
     permission: permission
     # Whether this keybinding should be enabled (true|false)
     enabled: true
+    # Whether the corresponding event should be canceled.
     cancel-event: true
+    # Cooldown in seconds, until this keybinding can be used again.
     cooldown: 10
+    # Commands (without / ) to be executed.
     commands:
       - say [shift-q] first command
       - say [shift-q] second command
