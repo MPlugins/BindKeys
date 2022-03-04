@@ -6,6 +6,8 @@ This plugin allows you to let the server execute commands when a player presses 
 **Currently available keys are**:
 * *F*
 * *Q*
+* *shift + F*
+* shift + Q*
 
 ## Config
 
