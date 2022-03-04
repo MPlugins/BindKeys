@@ -7,7 +7,7 @@ This plugin allows you to let the server execute commands when a player presses 
 * *F*
 * *Q*
 * *shift + F*
-* shift + Q*
+* *shift + Q*
 
 ## Config
 
