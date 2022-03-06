@@ -1,0 +1,3 @@
+# Message sent to player when cooldown is over.
+# Cooldown can be configured in config.yml
+cooldown-over: "&cCooldown for <v> is over"

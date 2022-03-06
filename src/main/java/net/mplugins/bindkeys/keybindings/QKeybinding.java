@@ -90,6 +90,7 @@ public class QKeybinding implements Keybinding
             public void run()
             {
                 cooldowns.remove(player.getUniqueId());
+                player.sendMessage(messages.getMessage("cooldown-over", NAME));
             }
         }.runTaskLaterAsynchronously(plugin, 20L * this.getCooldown());
     }

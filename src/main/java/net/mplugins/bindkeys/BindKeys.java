@@ -1,5 +1,6 @@
 package net.mplugins.bindkeys;
 
+import net.mplugins.bindkeys.configuration.Options;
 import net.mplugins.bindkeys.keybindings.FKeybinding;
 import net.mplugins.bindkeys.keybindings.QKeybinding;
 import net.mplugins.bindkeys.keybindings.ShiftFKeybinding;
@@ -13,11 +14,13 @@ import java.util.List;
 public final class BindKeys extends JavaPlugin
 {
     private static BindKeys instance;
+    private Options messages;
 
     @Override
     public void onEnable()
     {
         instance = this;
+        this.messages = new Options(this, "messages");
         this.setUpConfigurationFile();
         this.registerKeybindings();
     }
@@ -59,6 +62,11 @@ public final class BindKeys extends JavaPlugin
         header.add("unfortunately is no way around this!");
 
         return header;
+    }
+
+    public Options getMessages()
+    {
+        return messages;
     }
 
     public static BindKeys getInstance()

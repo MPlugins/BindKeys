@@ -1,6 +1,7 @@
 package net.mplugins.bindkeys.keybindings;
 
 import net.mplugins.bindkeys.BindKeys;
+import net.mplugins.bindkeys.configuration.Options;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.Listener;
 
@@ -11,6 +12,7 @@ public interface Keybinding extends Listener
 {
     BindKeys plugin = BindKeys.getInstance();
     FileConfiguration config = plugin.getConfig();
+    Options messages = plugin.getMessages();
 
     /**
      * Check if this keybinding is enabled.
