@@ -55,7 +55,10 @@ public class Options
 
     public String getMessage(String path, String... replacements)
     {
-        return getString("prefix").trim() + " " + getString(path, replacements).trim();
+        String prefix = "";
+        if (configuration.isSet("prefix"))
+            prefix = getString("prefix").trim() + " ";
+        return prefix + getString(path, replacements).trim();
     }
 
     public void set(String path, Object value)
@@ -73,7 +76,7 @@ public class Options
     }
 
     public Location getLocation(String path)
-    {
+{
         if (!cache.containsKey(path))
             cache.put(path, configuration.getLocation(path));
         return (Location) cache.get(path);
